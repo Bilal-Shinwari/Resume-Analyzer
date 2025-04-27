@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Matcher AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #00ffcc;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            animation: glow 2s infinite alternate;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,255,204,0.2);
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h2 {
+            color: #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        textarea, input[type="file"] {
+            width: 100%;
+            margin: 12px 0;
+            padding: 14px;
+            font-size: 1em;
+            background: #222;
+            border: 1px solid #333;
+            color: #eee;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #00ffcc;
+            border: none;
+            padding: 12px 24px;
+            color: #000;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00bfa6;
+            transform: translateY(-2px);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            }
+            to {
+                text-shadow: 0 0 20px #00ffee, 0 0 40px #00ffee, 0 0 60px #00ffee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CV Matcher AI</h1>
+        <p>Smart Matching Powered by AI — Find Your Fit Instantly</p>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>🔍 What We Do</h2>
+            <p>We help job seekers and recruiters quickly match CVs with job descriptions using state-of-the-art AI models. Our goal is to save you time and boost your hiring precision.</p>
+        </section>
+
+        <section>
+            <h2>🚀 What We Offer</h2>
+            <ul style="line-height: 1.8;">
+                <li>AI-powered resume-to-job matching</li>
+                <li>Semantic scoring and skill-based breakdown</li>
+                <li>Support for PDF, DOCX, and TXT</li>
+                <li>Instant feedback & smart tips</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📎 Upload Your CV</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <label for="job_description">Paste Job Description:</label><br>
+                <textarea name="job_description" rows="8" required></textarea><br>
+
+                <label for="cv_file">Upload CV File (.pdf, .docx, .txt):</label><br>
+                <input type="file" name="cv_file" required><br>
+
+                <button type="submit">Match CV</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,255,204,0.2);
+        }
+
+        h1 {
+            color: #00ffcc;
+            text-align: center;
+        }
+
+        .scores p {
+            background: #333;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        .progress-bar-container {
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 20px;
+            border-radius: 6px;
+            margin: 10px 0;
+            background-color: #ccc;
+        }
+
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            border-radius: 6px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CV Match Results</h1>
+        <p><strong>Total Match Score:</strong> {{ total_score }}%</p>
+
+        <!-- Progress Bars for Scores -->
+        <div class="progress-bar-container">
+            <p><strong>Semantic Match:</strong> {{ semantic_score }}%</p>
+            <div class="progress-bar">
+                <span style="width: {{ semantic_score }}%; background-color: #00ffcc;"></span>
+            </div>
+
+            <p><strong>Skills Match:</strong> {{ skills_score }}%</p>
+            <div class="progress-bar">
+                <span style="width: {{ skills_score }}%; background-color: #ff8c00;"></span>
+            </div>
+
+            <p><strong>Experience Match:</strong> {{ experience_score }}%</p>
+            <div class="progress-bar">
+                <span style="width: {{ experience_score }}%; background-color: #ff6347;"></span>
+            </div>
+
+            <p><strong>Education Match:</strong> {{ education_score }}%</p>
+            <div class="progress-bar">
+                <span style="width: {{ education_score }}%; background-color: #f39c12;"></span>
+            </div>
+        </div>
+
+        <h2>Job Description:</h2>
+        <pre>{{ job_description }}</pre>
+
+        <h2>Extracted CV Text:</h2>
+        <pre>{{ cv_text }}</pre>
+
+        <div class="button-container">
+            <a href="{{ url_for('index') }}" style="text-decoration: none; color: #fff; background-color: #2ecc71; padding: 10px 20px; border-radius: 5px; font-size: 16px;">← Try Another</a>
+        </div>
+    </div>
+</body>
+</html>
